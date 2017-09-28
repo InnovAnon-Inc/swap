@@ -64,8 +64,8 @@ void swaps2 (void *restrict a, void *restrict b, size_t esz, size_t n) {
 	char *restrict ac = (char *restrict) a;
 	char *restrict bc = (char *restrict) b;
 	size_t k;
-	#pragma GCC ivdep
 	TODO (see above)
+	#pragma GCC ivdep
 	for (k = 0; k != n; k++)
 		swap2 (ac + k * esz, bc + k * esz, esz);
 }

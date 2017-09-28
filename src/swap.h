@@ -9,6 +9,14 @@ extern "C" {
 
 #include <glitter.h>
 
+/* https://stackoverflow.com/questions/8862136/is-there-a-built-in-swap-function-in-c */
+#define SWAP(x,y) do {   \
+   typeof((x)) _x = (x); \
+   typeof((y)) _y = (y); \
+   (x) = _y;             \
+   (y) = _x;             \
+} while (0)
+
 void swap (void *restrict a, void *restrict b,
 	void *restrict tmp, size_t esz)
 __attribute__ ((leaf, nonnull (1, 2, 3), nothrow)) ;
