@@ -26,14 +26,14 @@ __attribute__ ((nonnull (1, 2, 3), nothrow))
 void swaps (void *restrict a, void *restrict b,
 	void *restrict tmp, size_t esz, size_t n) {
 	size_t eszs = esz * n;
-	swap (a, b, eszs);
+	swap (a, b, tmp, eszs);
 }
 
 /* src and dest should not overlap ? */
 __attribute__ ((leaf, nonnull (1, 2), nothrow))
 void swap2 (void *restrict a, void *restrict b, size_t esz) {
-	char *restrict ac = (char *restrict) src;
-	char *restrict bc = (char *restrict) dest;
+	char *restrict ac = (char *restrict) a;
+	char *restrict bc = (char *restrict) b;
 	/*uint64_t *restrict src64  = (uint64_t *restrict) src;
 	uint64_t *restrict dest64 = (uint64_t *restrict) dest;*/
 	size_t k;
