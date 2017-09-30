@@ -1,3 +1,8 @@
+AM_CPPFLAGS = -D__STDC_INT64__
+
+SUBDIRS = ../glitter
+AM_CPPFLAGS += -I ../glitter/src
+
 lib_LTLIBRARIES =
 include_HEADERS =
 bin_PROGRAMS    =
@@ -9,8 +14,3 @@ libswap_la_LIBADD = $(LIBSWAP_LIBADD)
 include_HEADERS += swap.h
 #bin_PROGRAMS += swap-test
 #swap_test_LDADD = libswap.la
-
-AM_CPPFLAGS = -D__STDC_INT64__
-
-SUBDIRS = ../glitter
-AM_CPPFLAGS += -I ../glitter/src
