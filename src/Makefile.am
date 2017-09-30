@@ -7,7 +7,7 @@ lib_LTLIBRARIES =
 include_HEADERS =
 bin_PROGRAMS    =
 
-LIBSWAP_LIBADD =
+include Makefile-LIBADD.inc
 
 lib_LTLIBRARIES += libswap.la
 libswap_la_LIBADD = $(LIBSWAP_LIBADD)
