@@ -5,6 +5,8 @@
 #define _POSIX_C_SOURCE 200112L
 #define __STDC_VERSION__ 200112L
 
+#include <assert.h>
+
 /*#define NDEBUG 1*/
 
 #ifndef NDEBUG
@@ -32,11 +34,14 @@ void swaps (void *restrict a, void *restrict b,
 /* src and dest should not overlap ? */
 __attribute__ ((leaf, nonnull (1, 2), nothrow))
 void swap2 (void *restrict a, void *restrict b, size_t esz) {
-	char *restrict ac = (char *restrict) a;
-	char *restrict bc = (char *restrict) b;
+	char *restrict ac;
+	char *restrict bc;
+	size_t k;
+	assert (a != b);
+	ac = (char *restrict) a;
+	bc = (char *restrict) b;
 	/*uint64_t *restrict src64  = (uint64_t *restrict) src;
 	uint64_t *restrict dest64 = (uint64_t *restrict) dest;*/
-	size_t k;
 	/*
 	#pragma GCC ivdep
 	for (k = 0; k != array->esz / sizeof (uint64_t); k++) {
@@ -61,9 +66,12 @@ void swap2 (void *restrict a, void *restrict b, size_t esz) {
 /* src and dest should not overlap ? */
 __attribute__ ((nonnull (1, 2), nothrow))
 void swaps2 (void *restrict a, void *restrict b, size_t esz, size_t n) {
-	char *restrict ac = (char *restrict) a;
-	char *restrict bc = (char *restrict) b;
+	char *restrict ac;
+	char *restrict bc;
 	size_t k;
+	assert (a != b);
+	ac = (char *restrict) a;
+	bc = (char *restrict) b;
 	TODO (see above)
 	#pragma GCC ivdep
 	for (k = 0; k != n; k++)
