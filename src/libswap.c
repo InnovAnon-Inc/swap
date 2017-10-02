@@ -7,11 +7,6 @@
 
 #include <assert.h>
 
-/*#define NDEBUG 1*/
-
-#ifndef NDEBUG
-#include <stdio.h>
-#endif
 #include <string.h>
 
 #include <swap.h>
