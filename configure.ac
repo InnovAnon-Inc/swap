@@ -22,7 +22,8 @@ AC_CHECK_HEADERS([glitter.h])
 
 AC_CHECK_LIB([stdlib],[memcpy])
 
-LIBSWAP_LIBADD="`PATH=src:$PATH libswap_config --libs`"
+srcdir = @srcdir@
+LIBSWAP_LIBADD="`PATH=$(srcdir)src:$PATH libswap_config --libs`"
 AC_SUBST(LIBSWAP_LIBADD)
 
 INNOVANON_WARNINGS([])

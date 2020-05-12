@@ -13,7 +13,7 @@ bin_PROGRAMS    =
 dist_bin_SCRIPTS = libswap_config
 
 lib_LTLIBRARIES += libswap.la
-libswap_la_LIBADD = $(LIBSWAP_LIBADD)
+libswap_la_LIBADD = @LIBSWAP_LIBADD@
 #libswap_la_LIBADD = `./libswap_config --libs`
 include_HEADERS += swap.h
 #bin_PROGRAMS += swap-test
