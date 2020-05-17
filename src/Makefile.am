@@ -1,23 +1,14 @@
 AM_CPPFLAGS = -D__STDC_INT64__
 
-#if USE_SUBMODULES
-#SUBDIRS = ../glitter
-#AM_CPPFLAGS += -I $(top_srcdir)/glitter/src
-#endif
-
 lib_LTLIBRARIES =
 include_HEADERS =
 bin_PROGRAMS    =
 
-#include Makefile-LIBADD.inc
-#dist_bin_SCRIPTS = libswap_config
-
 lib_LTLIBRARIES += libswap.la
-#libswap_la_LIBADD = @LIBSWAP_LIBADD@
-#libswap_la_LIBADD = `./libswap_config --libs`
 libswap_la_CPPFLAGS = $(GLITTER_CFLAGS)
-libswap_la_CFLAGS   = $(GLITTER_LIBS)
+libswap_la_LIBADD   = $(GLITTER_LIBS)
 include_HEADERS += swap.h
 
 #bin_PROGRAMS += swap-test
 #swap_test_LDADD = libswap.la
+

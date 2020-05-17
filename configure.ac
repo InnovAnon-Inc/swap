@@ -17,19 +17,15 @@ AC_ARG_ENABLE([use-submodules],
 AM_CONDITIONAL([USE_SUBMODULES], [test x"$enable_use_submodules" = "xyes"])
 
 AC_CONFIG_MACRO_DIR([m4])
-#AC_CONFIG_SUBDIRS([glitter])
 
 AC_CHECK_HEADERS([sys/types.h string.h])
-AC_CHECK_HEADERS([glitter.h])
+#AC_CHECK_HEADERS([glitter.h])
 
 AC_CHECK_LIB([stdlib],[memcpy])
 
-#srcdir = @srcdir@
-#LIBSWAP_LIBADD="`PATH=$(srcdir)src:$PATH libswap_config --libs`"
-#LIBSWAP_LIBADD="`PATH=src:$PATH libswap_config --libs`"
-#AC_SUBST(LIBSWAP_LIBADD)
 PKG_CHECK_MODULES([GLITTER],[glitter],,)
 
 INNOVANON_WARNINGS([])
 
 AC_OUTPUT
+

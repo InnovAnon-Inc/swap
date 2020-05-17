@@ -12,3 +12,4 @@ Libs: -L${libdir} -lswap
 Cflags: -I${includedir}
 Requires: glitter
 Requires.private:
+
