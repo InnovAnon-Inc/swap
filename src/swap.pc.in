@@ -8,7 +8,7 @@ includedir=@includedir@
 Name: @PACKAGE_NAME@
 Description: swap library
 Version: @PACKAGE_VERSION@
-Libs: -L${libdir} -lswap -lmmalloc
+Libs: -L${libdir} -lswap
 Cflags: -I${includedir}
 Requires: glitter
 Requires.private:
