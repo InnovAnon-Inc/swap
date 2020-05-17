@@ -24,6 +24,7 @@ AC_CHECK_HEADERS([sys/types.h string.h])
 AC_CHECK_LIB([stdlib],[memcpy])
 
 PKG_CHECK_MODULES([GLITTER],[glitter],,)
+PKG_CHECK_MODULES([MMALLOC],[mmalloc],,)
 
 INNOVANON_WARNINGS([])
 
