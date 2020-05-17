@@ -9,6 +9,6 @@ libswap_la_CPPFLAGS = $(GLITTER_CFLAGS)
 libswap_la_LIBADD   = $(GLITTER_LIBS)
 include_HEADERS += swap.h
 
-#bin_PROGRAMS += swap-test
+#bin-PROGRAMS += swap-test
 #swap_test_LDADD = libswap.la
 
