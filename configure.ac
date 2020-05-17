@@ -8,7 +8,9 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
  Makefile
  src/Makefile
+ src/swap.pc
 ])
+PKG_PROG_PKG_CONFIG
 
 AC_ARG_ENABLE([use-submodules],
     AS_HELP_STRING([--enable-use-submodules], [Enable use submodules]))
@@ -24,8 +26,9 @@ AC_CHECK_LIB([stdlib],[memcpy])
 
 #srcdir = @srcdir@
 #LIBSWAP_LIBADD="`PATH=$(srcdir)src:$PATH libswap_config --libs`"
-LIBSWAP_LIBADD="`PATH=src:$PATH libswap_config --libs`"
-AC_SUBST(LIBSWAP_LIBADD)
+#LIBSWAP_LIBADD="`PATH=src:$PATH libswap_config --libs`"
+#AC_SUBST(LIBSWAP_LIBADD)
+PKG_CHECK_MODULES([GLITTER],[glitter],,)
 
 INNOVANON_WARNINGS([])
 

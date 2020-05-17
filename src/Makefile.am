@@ -10,11 +10,14 @@ include_HEADERS =
 bin_PROGRAMS    =
 
 #include Makefile-LIBADD.inc
-dist_bin_SCRIPTS = libswap_config
+#dist_bin_SCRIPTS = libswap_config
 
 lib_LTLIBRARIES += libswap.la
-libswap_la_LIBADD = @LIBSWAP_LIBADD@
+#libswap_la_LIBADD = @LIBSWAP_LIBADD@
 #libswap_la_LIBADD = `./libswap_config --libs`
+libswap_la_CPPFLAGS = $(GLITTER_CFLAGS)
+libswap_la_CFLAGS   = $(GLITTER_LIBS)
 include_HEADERS += swap.h
+
 #bin_PROGRAMS += swap-test
 #swap_test_LDADD = libswap.la
