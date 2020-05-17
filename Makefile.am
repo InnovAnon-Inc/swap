@@ -1,9 +1,9 @@
 # Install the pkg-config file.
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = src/swap.pc
+pkgconfig_DATA = src/libswap.pc
 
 DISTCLEANFILES = $(pkgconfig_DATA)
-EXTRA_DIST = src/swap.pc.in
+EXTRA_DIST = src/libswap.pc.in
 
 SUBDIRS = src
 dist_doc_DATA = README.md
